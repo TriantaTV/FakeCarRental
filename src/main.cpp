@@ -1,5 +1,7 @@
 #include <iostream>
-#include <Windows.h>
+#include <thread>
+#include <chrono>
+// #include <Windows.h>
 #include "rental.h"
 
 int main() {
@@ -15,19 +17,23 @@ int main() {
             newBusiness.RentCars(1);
             std::cout << "You have chosen to rent a car." << std::endl;
             std::cout << "Thank you, have a great day!"   << std::endl;
-            Sleep(5000);
-            system("CLS");
+            // Sleep(5000);
+            std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+            system("cls||clear");
+            // system("CLS");
         } else {
             newBusiness.ReturnCars(1);
             std::cout << "You have chosen to return a car." << std::endl;
             std::cout << "Your return has been processed!"  << std::endl;
             std::cout << "Thank you, have a great day!"     << std::endl;
-            Sleep(5000);
-            system("CLS");
+            // Sleep(5000);
+            std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+            system("cls||clear");
+            // system("CLS");
         }
         timesRan += 1;
     }
-    system("CLS");
+    system("cls||clear");
     std::cout << "Number of cars at end of day: ";
     std::cout << newBusiness.GetCars() << '\n';
     std::cout << "Number of cars rented as of today: ";
